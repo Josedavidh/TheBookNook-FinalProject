@@ -52,13 +52,13 @@ export const Navbar = ({ onSearch, searchValue }) => {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 order-lg-1">
             <li>
               <Link className="ms-4 navbar-link" to="/categorias">
-                Categorías
+                Categories
               </Link>
             </li>
 
             <li>
               <Link className="AllBooks ms-4 navbar-link" to="/books">
-                Libros
+                Books
               </Link>
             </li>
           </ul>
@@ -68,7 +68,7 @@ export const Navbar = ({ onSearch, searchValue }) => {
               name="search"
               type="search"
               className="form-control"
-              placeholder="Buscar libros autores y categorias"
+              placeholder="Search for books, authors, or categories"
               value={searchValue}
               onChange={(event) => {
                 onSearch(event.target.value);
@@ -80,7 +80,7 @@ export const Navbar = ({ onSearch, searchValue }) => {
             />
 
             <button type="submit" className="btn btn-primary ms-3">
-              Buscar
+              Search
             </button>
           </form>
         </div>
