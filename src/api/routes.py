@@ -617,9 +617,9 @@ def verificar_pago(session_id):
         }), 200
     except Exception as e:
         print("Error verificando pago:", str(e))
-        return jsonify({"msg": "Error al verificar el pago"}), 500
+        return jsonify({"msg": "Error verifying payment"}), 500
 
-# endpoint para popular la base de datos
+# endpoint to populate the database
 @api.route("/populate-user", methods=["GET"])
 def populate_users():
     for rol in roles:

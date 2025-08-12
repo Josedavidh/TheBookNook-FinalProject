@@ -106,7 +106,7 @@ export const Home = () => {
 
 
 
-        <h2> Productos destacados</h2>
+        <h2>Featured Books</h2>
 
         <div className="row">
 
