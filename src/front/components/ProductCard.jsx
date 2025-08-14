@@ -37,11 +37,11 @@ return () => {
         className="product-card__image"
       />
 
-            <h3 ref={titleRef} className='product-card__name'>{product.name}</h3>
-            <p className='product-card__price'>${product.price.toFixed(2)}</p>
+            <h3 ref={titleRef} className=''>{product.name}</h3>
+            <p className='fw-bold fs-4'>${product.price.toFixed(2)}</p>
             <Link to={`/producto/${product.id}`}>
-            <button className='product-card__button'    
-            >Ver mas detalles
+            <button className='btn btn-warning rounded-5 fs-6 fw-bold'    
+            >More Details
             </button>
             </Link>
         </div>

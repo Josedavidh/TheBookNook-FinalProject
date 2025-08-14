@@ -27,12 +27,6 @@ export const VistaProducto = () => {
         const noDuplicate = previous.filter((productId) => productId !== data.id);
         const next = [data.id, ...noDuplicate].slice(0, 4);
         localStorage.setItem(key, JSON.stringify(next));
-
-
-        // Se adicionan las lineas 24 y 25 para evaluar el stock
-        // if (data.product_stock < quantity) {
-        //   setQuantity(data.product_stock > 0 ? 1 : 0);
-        // }
       })
       .catch((err) => console.error(err));
   }, [id, backendUrl, quantity]);

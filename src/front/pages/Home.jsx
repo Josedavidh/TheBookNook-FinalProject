@@ -22,8 +22,6 @@ export const Home = () => {
     setSearchText(sB);
   }, [searchParams]);
 
-
-
   const bkUrl = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
@@ -64,10 +62,6 @@ export const Home = () => {
         const requestUrl = `${bkUrl}/products${queryParameters.toString() ? "?" + queryParameters.toString() : ""
           }`;
 
-        // console.log("bkUrl=", bkUrl);
-        // console.log("lammando a:", requestUrl);
-
-
         const productsResponse = await fetch(requestUrl);
         const productsData = await productsResponse.json();
 
@@ -85,8 +79,6 @@ export const Home = () => {
     loadFilteredProducts();
   }, [bkUrl, selectedCategoryId, selectedAuthorId, searchText]);
 
-
-
   const handleSearch = (text) => {
     setSearchText(text);
   };
@@ -99,17 +91,11 @@ export const Home = () => {
   const isFiltering = Boolean(searchText || selectedCategoryId !== null || selectedAuthorId !== null);
   const displayedProducts = isFiltering ? products : products.filter(p => p.is_featured).slice(0, 8);
 
-
-
-  //  console.log('productos recibidos:', products);
-
   return (
     <div className="home-container text-center mt-5">
       <div className="container text-center mt-5">
         <div className="mt-5 mb-5">
           <Banner
-            title="No te pierdas estas ofertas"
-            subtitle="Con la compra de mas de $50 el envio es gratis"
             onSearch={handleSearch}
             onCategorySelect={handleCategorySelect}
             searchValue={searchText}
@@ -118,61 +104,21 @@ export const Home = () => {
           />
         </div>
 
-        {/* <div className="row mb-4">
-          <div className="col">
-            <select
-              className="form-select"
-              value={selectedCategoryId || ""}
-              onChange={(event) => {
-                const value = event.target.value;
-                setSelectedCategoryId(value ? Number(value) : null);
-              }}
-            >
-              <option value=""> Todas las categorías</option>
-              {categories.map((category) => (
-                <option key={category.id} value={category.id}>
-                  {category.name}
-                </option>
-              ))}
-            </select>
-          </div>
 
-          <div className="col">
-            <select
-              className="form-select"
-              value={selectedAuthorId || ""}
-              onChange={(event) => {
-                const value = event.target.value;
-                setSelectedAuthorId(value ? Number(value) : null);
-              }}
-            >
-              <option value=""> Todas los autores</option>
-              {authors.map((author) => (
-                <option key={author.id} value={author.id}>
-                  {author.name}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div> */}
 
-        
-
-        {/* <h2>vista recientes</h2> */}
-
-        <h2> Productos destacados</h2>
+        <h2>Featured Books</h2>
 
         <div className="row">
 
-          { displayedProducts.map((p) => (
+          {displayedProducts.map((p) => (
             <div key={p.id} className="col=12 col-sm-6 col-md-3 mb-5">
-              <ProductCard product={p}/>
-              </div>
+              <ProductCard product={p} />
+            </div>
           ))}
-</div>
-<RecentViews bkUrl={bkUrl} />
-</div>
-</div>
+        </div>
+        <RecentViews bkUrl={bkUrl} />
+      </div>
+    </div>
   );
 };
 
