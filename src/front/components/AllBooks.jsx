@@ -21,7 +21,7 @@ const AllBooks = () => {
           setProducts(sorted);
         }
       } catch (error) {
-        console.error("Error al cargar los libros:", error);
+        console.error("Error loading the books:", error);
       }
     };
 
@@ -30,7 +30,7 @@ const AllBooks = () => {
 
   return (
     <div className="container mt-4 text-center">
-      <h1> Todos nuestros libros</h1>
+      <h1>All Our Books</h1>
       <div className="row mx">
         {products.map((book) => (
           <div key={book.id} className="col-12 col-sm-6 col-md-3 mb-4">

@@ -2,7 +2,6 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import String, Boolean, Float, Integer, ForeignKey, Text, JSON, Table
 from sqlalchemy.orm import Mapped, mapped_column, relationship, validates
 import datetime
-# from .users import
 
 db = SQLAlchemy()
 
@@ -93,7 +92,6 @@ class Product(db.Model):
     rating: Mapped[int] = mapped_column(Integer, nullable=True)
     product_stock: Mapped[int] = mapped_column(Integer, nullable=False)
     
-
     category_id: Mapped[int] = mapped_column(
         ForeignKey('category.id'), nullable=False)
 
@@ -122,9 +120,8 @@ class Product(db.Model):
             'authors': [a.serialize() for a in self.authors],
         }
 
-    # CARRITO DE COMPRAS
 
-
+# CARRITO DE COMPRAS
 class CartItem(db.Model):
     __tablename__ = 'cart_items'
     id = db.Column(db.Integer, primary_key=True)
