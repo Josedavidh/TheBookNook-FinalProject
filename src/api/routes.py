@@ -18,16 +18,13 @@ from sqlalchemy import func
 stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 api = Blueprint('api', __name__)
 
-# ENDPOINT DEL LOGIN
-
-
+# LOGIN ENDPOINT
 @api.route('/register', methods=['POST'])
 def add_user():
     data = request.get_json()
     email = data.get("email")
     name = data.get("username")
     password = data.get("password")
-    # role_id = data.get("role_id")
 
     if not email or not name or not password:
         return jsonify({"msg": "Faltan campos requeridos"}), 400
@@ -41,7 +38,6 @@ def add_user():
     salt = b64encode(os.urandom(32)).decode("utf-8")
     user = User(email=email, name=name, salt=salt)
     user.password = set_password(password, salt)
-    # user.role_id = role_id
     db.session.add(user)
 
     try:
@@ -67,16 +63,7 @@ def login():
         return jsonify({"msg": "Credenciales incorrectas"}), 401
 
     print(user.serialize())
-
-    # additional_claims = {"role": user.role_id if user.role_id else "user"}
-    # Código original comentado porque el subject debe ser string 07JUL ***
-    # token = create_access_token(identity=user.id)
-    # Fin código original comentado porque el subject debe ser string 07JUL ***
-
-    # Código nuevo para solucionar el string en el subject 07JUL ***
     token = create_access_token(identity=str(user.id))
-    # Fin código nuevo para solucionar el string en el subject 07JUL ***
-
     return jsonify({"token": token, "user": user.serialize()}), 200
 
 
@@ -92,7 +79,7 @@ def forgot_password():
         user = User.query.filter_by(email=email).one_or_none()
 
         if user:
-            # Usamos la función desde utils.py para modularizar
+            # Using the function from utils.py to modularize
             return validate_email(user_email=email, user_id=user.id)
         else:
             return jsonify({"msg": "Si tu correo está en el sistema, recibirás un enlace"}), 200
@@ -201,7 +188,6 @@ def change_email():
 
 @api.route('/products', methods=['GET'])
 def get_products():
-    # print(">>> Parametros recibidos:", request.args)
     query = Product.query
 
     category_id = request.args.get('category_id', type=int)
@@ -335,8 +321,7 @@ def create_author():
     return jsonify(author.serialize()), 201
                                                                                                                                                  
                                                                                                                                                                                                                                                                                                                                                   
-# RUTAS CARRITO DE COMPRAS
-                                                                                                                                                                                                     
+#CART ROUTES                                                                                                                                                                                            
 @api.route('/cart/<int:user_id>', methods=['GET'])
 @jwt_required()
 def get_cart(user_id):
@@ -396,7 +381,6 @@ def clear_cart(user_id):
     return jsonify({"msg": "Carrito vaciado"}), 200
 
 # CHECKOUT
-
 @api.route('/create-checkout-session', methods=['POST'])
 @jwt_required()
 def create_checkout_session():
@@ -502,7 +486,7 @@ def getContactForm():
         print(f"Error al recuperar mensajes de la base de datos: {error}")
         return jsonify({"msg": f"Failed to retrieve messages: {str(error)}"}), 500
 
-# Webhook de Stripe
+# STRIPE WEBHOOK
 @api.route('/webhook', methods=['POST'])
 def stripe_webhook():
     payload = request.data
@@ -525,7 +509,7 @@ def stripe_webhook():
         if not user_id:
             return jsonify({'msg': 'User ID no encontrado en metadata'}), 400
 
-        # Recuperar los items de la sesión
+        # Recovering the session items
         line_items = stripe.checkout.Session.list_line_items(session['id'])
         total_amount = session['amount_total'] / 100
 

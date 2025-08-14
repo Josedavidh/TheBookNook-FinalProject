@@ -14,33 +14,33 @@ export const Footer = () => (
             <use xlinkHref="#bootstrap"></use>
           </svg>
         </Link>
-        <p className="text-light">© 2025 Nombre de la tienda</p>
+        <p className="text-light">© 2025 The Book Nook</p>
       </div>
 
       <div className="col"></div>
 
       <div className="col ">
-        <h5>Categorías</h5>
+        <h5>Categories</h5>
         <ul className="nav flex-column">
           <li className="nav-item mb-2">
             <Link to="/categorias" className="nav-link p-0 text-light">
-              Explorar categorías
+              Explore Categories
             </Link>
           </li>
         </ul>
       </div>
 
       <div className="col ">
-        <h5>Acerca de nosotros</h5>
+        <h5>About Us</h5>
         <ul className="nav flex-column">
           <li className="nav-item mb-2">
             <Link to="/quienes-somos" className="nav-link p-0 text-light">
-              Quiénes somos
+              Who We Are
             </Link>
           </li>
           <li className="nav-item mb-2">
             <Link to="/contactanos" className="nav-link p-0 text-light">
-              Contáctanos
+              Contact Us
             </Link>
           </li>
           <li className="nav-item mb-2">
@@ -48,21 +48,21 @@ export const Footer = () => (
               to="/preguntas-frecuentes"
               className="nav-link p-0 text-light"
             >
-              Preguntas frecuentes
+              FAQ
             </Link>
           </li>
         </ul>
       </div>
 
       <div className="col ">
-        <h5>Nuestras políticas</h5>
+        <h5>Our Policy</h5>
         <ul className="nav flex-column">
           <li className="nav-item mb-2">
             <Link
               to="/politica-de-privacidad"
               className="nav-link p-0 text-light"
             >
-              Política de privacidad
+              Privacy Policy
             </Link>
           </li>
           <li className="nav-item mb-2">
@@ -70,7 +70,7 @@ export const Footer = () => (
               to="/politica-de-cancelacion"
               className="nav-link p-0 text-light"
             >
-              Política de cancelación
+              Cancelation Policy
             </Link>
           </li>
 
@@ -79,7 +79,7 @@ export const Footer = () => (
               to="/terminos-y-condiciones"
               className="nav-link p-0 text-light"
             >
-              Términos y condiciones
+              Terms and Conditions
             </Link>
           </li>
         </ul>
