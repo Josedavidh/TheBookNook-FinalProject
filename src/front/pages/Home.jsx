@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { useSearchAndFilter } from "../hooks/useSearchAndFilter";
 import { useSearchParams } from "react-router-dom";
-import Banner from "../components/Banner.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 import RecentViews from "../components/RecentViews.jsx";
 
@@ -79,31 +78,25 @@ export const Home = () => {
     loadFilteredProducts();
   }, [bkUrl, selectedCategoryId, selectedAuthorId, searchText]);
 
-  const handleSearch = (text) => {
-    setSearchText(text);
-  };
+  // const handleSearch = (text) => {
+  //   setSearchText(text);
+  // };
 
-  const handleCategorySelect = (categoryId) => {
-    setSelectedCategoryId(categoryId);
-    setSearchText('');
-  }
+  // const handleCategorySelect = (categoryId) => {
+  //   setSelectedCategoryId(categoryId);
+  //   setSearchText('');
+  // }
 
   const isFiltering = Boolean(searchText || selectedCategoryId !== null || selectedAuthorId !== null);
   const displayedProducts = isFiltering ? products : products.filter(p => p.is_featured).slice(0, 8);
 
   return (
     <div className="home-container text-center mt-5">
-      <div className="container text-center mt-5">
-        <div className="mt-5 mb-5">
-          <Banner
-            onSearch={handleSearch}
-            onCategorySelect={handleCategorySelect}
-            searchValue={searchText}
-            categories={categories}
-            authors={authors}
-          />
+      <div className="pt-0">
+          <img src="Library_banner.jpg" alt="Library Banner" />
         </div>
-
+      <div className="container text-center mt-5">
+        
 
 
         <h2>Featured Books</h2>
@@ -121,43 +114,3 @@ export const Home = () => {
     </div>
   );
 };
-
-
-
-
-
-
-
-
-
-//           {/* {/* {products.filter((p) => p.is_featured)
-//           .slice(0, 8).map((p) => (
-
-
-//           // )) {
-//           //   return (
-//           //     p.is_featured && (
-
-//                 <div key={p.id} className="col-12 col-sm-6 col-md-3 mb-5">
-//                   <ProductCard product={p} />
-//                 </div>
-//               ))
-//             }
-//             {/* );
-//           })} */}
-//         {/* </div> */}
-
-//         {/* <h2> categorias destaca </h2>
-//         <div className="row product-grid">
-//           {products.map((p) => {
-//             return (
-//               <div key={p.id} className="col-12 col-sm-6 col-md-3 mb-4">
-//                 <ProductCard product={p} />
-//               </div>
-//             );
-//           })}
-//         </div> */}
-// //       </div>
-// //     </div> */}
-// //   );
-// // }; */}

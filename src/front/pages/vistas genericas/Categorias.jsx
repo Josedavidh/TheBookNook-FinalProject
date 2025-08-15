@@ -12,7 +12,7 @@ export const Categorias = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch(`${backendUrl}/categories`);
+        const response = await fetch(`${backendUrl}/categorias`);
         const data = await response.json();
         setCategories(data);
       } catch (error) {
@@ -48,37 +48,9 @@ export const Categorias = () => {
     <div className="container">
       <div className="row">
         <div className="col-12 col-md-12 col-lg-12">
-          <h1 className="py-4 d-flex justify-content-center">CATEGORIAS</h1>
+          <h1 className="py-4 d-flex justify-content-center">CATEGORIES</h1>
         </div>
         <div className="col-12 col-md-12 col-lg-12 d-flex justify-content-center py-3">
-
-          {/* Menú desplegable */}
-
-          {/* <div className="dropdown">
-            <button
-              className="btn btn-white border dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              {selectedCategoryName}
-            </button>
-            <ul className="dropdown-menu">
-              {categories.map((cat) => (
-                <li key={cat.id}>
-                  <button
-                    className="dropdown-item"
-                    type="button"
-                    onClick={() => handleCategorySelect(cat)}
-                  >
-                    {cat.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div> */}
-
-
 
           <nav className="banner__categories">
             {categories.map((category) => (
