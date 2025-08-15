@@ -9,7 +9,6 @@ export const Footer = () => (
           className="d-flex align-items-center mb-4 link-light text-decoration-none"
           aria-label="Inicio"
         >
-          {/* Aquí puedes insertar tu logo SVG o un ícono */}
           <svg className="bi me-2" width="40" height="32" aria-hidden="true">
             <use xlinkHref="#bootstrap"></use>
           </svg>
@@ -23,7 +22,7 @@ export const Footer = () => (
         <h5>Categories</h5>
         <ul className="nav flex-column">
           <li className="nav-item mb-2">
-            <Link to="/categorias" className="nav-link p-0 text-light">
+            <Link to="/categories" className="nav-link p-0 text-light">
               Explore Categories
             </Link>
           </li>

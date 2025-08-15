@@ -1,7 +1,7 @@
 import React from "react"; 
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { Link, useNavigate } from "react-router-dom";
-import milPaginasLogo from "../assets/img/mil_paginas.png";
+import LibraryLogo from "../assets/img/Library_Logo.png";
 import "../styles/navbar.css";
 
 export const Navbar = ({ onSearch, searchValue }) => {
@@ -45,7 +45,7 @@ export const Navbar = ({ onSearch, searchValue }) => {
         </button>
 
         <Link className="navbar-brand mx-auto order-lg-first" to="/">
-          <img src={milPaginasLogo} alt="Mil páginas logo" height="50" />
+          <img src={LibraryLogo} alt="Mil páginas logo" height="120" />
         </Link>
 
         <div className="collapse navbar-collapse" id="navbarNav">

@@ -102,7 +102,7 @@ class Product(db.Model):
     @validates('rating')
     def validate_rating(self, key, value):
         if value < 0 or value > 5:
-            raise ValueError("El rating debe estar entre 0 y 5")
+            raise ValueError("The rating must be between 0 and 5")
         return value
 
     def serialize(self):

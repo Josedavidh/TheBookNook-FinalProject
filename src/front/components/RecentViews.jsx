@@ -23,7 +23,7 @@ const RecentViews = ({bkUrl}) => {
 
     return(
         <>
-        <h2> vistos recientemente</h2>
+        <h2>Recent Views</h2>
         <div className="row mt-5 mb-5">
         {recent.map((product) => (
             <div key={product.id} className="col-12 col-sm-6 col-md-3 mb-4">
