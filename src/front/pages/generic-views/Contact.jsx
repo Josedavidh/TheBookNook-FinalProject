@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const Contacto = () => {
+export const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -38,7 +38,7 @@ export const Contacto = () => {
       const data = await response.json(); 
 
       if (response.ok) { 
-        setSubmitMessage({ type: 'success', text: data.msg || '¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.' });
+        setSubmitMessage({ type: 'success', text: data.msg || '¡Message successfully sent! I will get in touch soon.' });
         setFormData({ name: '', email: '', message: '' }); 
       } else {
         setSubmitMessage({ type: 'error', text: data.msg || 'Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo.' });

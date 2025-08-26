@@ -1,9 +1,9 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import "../styles/vistaproducto.css";
+import "../styles/productdetail.css";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 
-export const VistaProducto = () => {
+export const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [imgSelected, setImgSelected] = useState("");
@@ -16,7 +16,7 @@ export const VistaProducto = () => {
   const [addingToCart, setAddingToCart] = useState(false);
 
   useEffect(() => {
-    fetch(`${backendUrl}/product/${id}`)
+    fetch(`${backendUrl}/product-detail/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
@@ -88,7 +88,7 @@ export const VistaProducto = () => {
 
     if (!store.token) {
       alert("Para comprar ahora, por favor inicia sesión o regístrate.");
-      navigate("/iniciar-sesion");
+      navigate("/login");
       return;
     }
 

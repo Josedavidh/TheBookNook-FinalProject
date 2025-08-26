@@ -39,7 +39,7 @@ export const Home = () => {
           setAuthors(authorsData);
         }
       } catch (loadError) {
-        console.error("Error al cargar categorias o autores:", loadError);
+        console.error("Error loading categories or authors:", loadError);
       }
     }
     LoadCategoriesAndAuthors();
@@ -78,21 +78,12 @@ export const Home = () => {
     loadFilteredProducts();
   }, [bkUrl, selectedCategoryId, selectedAuthorId, searchText]);
 
-  // const handleSearch = (text) => {
-  //   setSearchText(text);
-  // };
-
-  // const handleCategorySelect = (categoryId) => {
-  //   setSelectedCategoryId(categoryId);
-  //   setSearchText('');
-  // }
-
   const isFiltering = Boolean(searchText || selectedCategoryId !== null || selectedAuthorId !== null);
   const displayedProducts = isFiltering ? products : products.filter(p => p.is_featured).slice(0, 8);
 
   return (
-    <div className="home-container text-center mt-5">
-      <div className="pt-0">
+    <div className="home-container text-center">
+      <div>
           <img src="Library_banner.jpg" alt="Library Banner" />
         </div>
       <div className="container text-center mt-5">

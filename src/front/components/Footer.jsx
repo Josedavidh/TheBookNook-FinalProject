@@ -33,7 +33,7 @@ export const Footer = () => (
         <h5>About Us</h5>
         <ul className="nav flex-column">
           <li className="nav-item mb-2">
-            <Link to="/quienes-somos" className="nav-link p-0 text-light">
+            <Link to="/who-we-are" className="nav-link p-0 text-light">
               Who We Are
             </Link>
           </li>
@@ -44,7 +44,7 @@ export const Footer = () => (
           </li>
           <li className="nav-item mb-2">
             <Link
-              to="/preguntas-frecuentes"
+              to="/faq"
               className="nav-link p-0 text-light"
             >
               FAQ
@@ -58,7 +58,7 @@ export const Footer = () => (
         <ul className="nav flex-column">
           <li className="nav-item mb-2">
             <Link
-              to="/politica-de-privacidad"
+              to="/privacy-policy"
               className="nav-link p-0 text-light"
             >
               Privacy Policy
@@ -66,16 +66,16 @@ export const Footer = () => (
           </li>
           <li className="nav-item mb-2">
             <Link
-              to="/politica-de-cancelacion"
+              to="/cancellation-policy"
               className="nav-link p-0 text-light"
             >
-              Cancelation Policy
+              Cancellation Policy
             </Link>
           </li>
 
           <li className="nav-item mb-2">
             <Link
-              to="/terminos-y-condiciones"
+              to="/terms-conditions"
               className="nav-link p-0 text-light"
             >
               Terms and Conditions

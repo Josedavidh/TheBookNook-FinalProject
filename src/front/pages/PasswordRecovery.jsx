@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSearchParams, Link, useNavigate } from "react-router-dom";
 
-export const RecuperarContraseña = () => {
+export const PasswordRecovery = () => {
   const [newPass, setNewPass] = useState("");
   const [searchParams, _] = useSearchParams();
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ export const RecuperarContraseña = () => {
 });
 
     if (response.ok) {
-      navigate("/iniciar-sesion");
+      navigate("/login");
     }
   };
 
@@ -29,7 +29,7 @@ export const RecuperarContraseña = () => {
     <div className="container-fluid">
       <div className="row py-5 justify-content-center">
         <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
-          <h1 className="text-center">Recuperar contraseña</h1>
+          <h1 className="text-center">Password Recovery</h1>
         </div>
         <div className="col-12 col-md-6">
           <form className="border m-2 p-3" onSubmit={handleSubmit}>

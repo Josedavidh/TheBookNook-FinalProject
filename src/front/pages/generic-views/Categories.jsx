@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "../../components/ProductCard"
 
-export const Categorias = () => {
+export const Categories = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategoryName, setSelectedCategoryName] = useState("Selecciona una categoría");
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
@@ -12,11 +12,11 @@ export const Categorias = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch(`${backendUrl}/categorias`);
+        const response = await fetch(`${backendUrl}/categories`);
         const data = await response.json();
         setCategories(data);
       } catch (error) {
-        console.error("Error al cargar categorías:", error);
+        console.error("Error loading categories:", error);
       }
     };
     fetchCategories();

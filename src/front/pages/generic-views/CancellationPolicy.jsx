@@ -1,4 +1,4 @@
-export const PoliticaCancelacion = () => (
+export const CancellationPolicy = () => (
   <div className="container py-4">
     <div className="col-12 text-center py-3 my-3 bg-dark text-white">
       <h2>Política de Cancelación</h2>

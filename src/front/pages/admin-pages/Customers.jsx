@@ -1,5 +1,5 @@
 export const Customers =() =>{
     return (
-        <h1>en construccion</h1>
+        <h1>In Construction</h1>
     )
 }

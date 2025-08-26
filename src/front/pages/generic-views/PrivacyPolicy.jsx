@@ -1,4 +1,4 @@
-export const PoliticaPrivacidad = () => (
+export const PrivacyPolicy = () => (
   <div className="container py-4">
     <div className="col-12 text-center py-3 my-3 bg-dark text-white">
       <h2>Política de Privacidad</h2>

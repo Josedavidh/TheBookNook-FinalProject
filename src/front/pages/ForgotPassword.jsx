@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const OlvidoContraseña = () => {
+export const ForgotPassword = () => {
     const [email, setEmail] = useState("");
     const [sent, setSent] = useState(false);
     const [error, setError] = useState(null);
@@ -43,7 +43,7 @@ export const OlvidoContraseña = () => {
                 {!sent ? (
                     <>
                         <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
-                            <h1 className="text-center">Solicitar un correo para recuperar contraseña</h1>
+                            <h1 className="text-center">Request an email to recover your password</h1>
                         </div>
                         <div className="col-12 col-md-6">
                             <form onSubmit={handleSubmit} className="border m-2 p-3">
@@ -65,7 +65,7 @@ export const OlvidoContraseña = () => {
                                 </button>
                             </form>
                             <h5 className="text-center my-4">
-                                ¿No tienes cuenta? <Link to="/registro">Crea una</Link>
+                                ¿Don't have an account? <Link to="/signup">Sign Up</Link>
                             </h5>
                         </div>
                     </>
@@ -73,7 +73,7 @@ export const OlvidoContraseña = () => {
                     <div className="col-12 col-md-6 text-center">
                         <h1>¡Correo Enviado!</h1>
                         <p>Si tu correo está en nuestro sistema, recibirás un enlace para recuperar tu contraseña.</p>
-                        <Link to="/iniciar-sesion" className="btn btn-success">
+                        <Link to="/login" className="btn btn-success">
                             Volver al Inicio de sesion
                         </Link>
                     </div>

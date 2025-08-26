@@ -9,7 +9,7 @@ const initialStateUser = {
   password: "",
 };
 
-export const Registro = () => {
+export const SignUp = () => {
   const [user, setUser] = useState(initialStateUser);
   const [registered, setRegistered] = useState(false);
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ export const Registro = () => {
   useEffect(() => {
     if (registered) {
       const timer = setTimeout(() => {
-        navigate("/iniciar-sesion");
+        navigate("/login");
       }, 3000);
       return () => clearTimeout(timer);
     }
@@ -74,7 +74,7 @@ export const Registro = () => {
             className="border p-4 shadow rounded bg-white"
             onSubmit={handleSubmit}
           >
-            <h2 className="text-center mb-4">Registro</h2>
+            <h2 className="text-center mb-4">Register</h2>
             <div className="form-group mb-3">
               <label htmlFor="btnName">Nombre de usuario:</label>
               <input
@@ -114,7 +114,7 @@ export const Registro = () => {
             <div className="text-center mt-3">
               <small>
                 ¿Ya tienes una cuenta?{" "}
-                <Link to="/iniciar-sesion">Inicia sesión</Link>
+                <Link to="/login">Inicia sesión</Link>
               </small>
             </div>
           </form>

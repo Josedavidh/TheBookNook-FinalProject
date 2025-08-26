@@ -11,7 +11,7 @@ const RecentViews = ({bkUrl}) => {
 
         Promise.all(
             views.map((productId) => 
-                fetch(`${bkUrl}/product/${productId}`)
+                fetch(`${bkUrl}/product-detail/${productId}`)
                     .then((response) =>response.json())
 )
 )

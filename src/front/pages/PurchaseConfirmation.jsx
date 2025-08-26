@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import "../styles/confirmacioncompra.css";
+import "../styles/purchaseconfirmation.css";
 
-export const ConfirmacionCompra = () => {
+export const PurchaseConfirmation = () => {
   const [searchParams] = useSearchParams();
   const [datosPago, setDatosPago] = useState(null);
   const backendUrl = import.meta.env.VITE_BACKEND_URL;

@@ -7,7 +7,7 @@ const initialStateUser = {
   password: "",
 };
 
-export const IniciarSesion = () => {
+export const Login = () => {
   const [user, setUser] = useState(initialStateUser);
   const [message, setMessage] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -18,25 +18,12 @@ export const IniciarSesion = () => {
   const { store, dispatch } = useGlobalReducer();
   const navigate = useNavigate();
 
-  // const handleChange = ({ target }) => {
-  //   setUser({
-  //     ...user,
-  //     [target.name]: target.value,
-  //   });
-  // };
-
   const handleChange = (event) => {
     setCredential({
       ...credential,
       [event.target.name]: event.target.value,
     });
   };
-
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   setMessage(null);
-  //   setLoading(true);
-  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -68,31 +55,6 @@ export const IniciarSesion = () => {
     }
   };
 
-  //   try {
-  //     const success = await actions.login(user.email, user.password);
-  //     if (success) {
-  //       console.log(success);
-  //       // dispatch({
-  //       //   type: UPDATE_TOKEN,
-  //       // });
-  //       setMessage("¡Inicio de sesión exitoso! Redirigiendo...");
-  //       navigate("/");
-  //     } else {
-  //       setMessage("Correo o contraseña incorrectos.");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error durante el inicio de sesión:", error);
-  //     setMessage("Hubo un error. Intenta nuevamente.");
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-  // if (store.token) {
-  //   console.log(store.token);
-  //   return <Navigate to="/" />;
-  // }
-
   return (
     <div className="container vh-100 d-flex justify-content-center align-items-center">
       <div className="row w-100 justify-content-center">
@@ -101,7 +63,7 @@ export const IniciarSesion = () => {
             onSubmit={handleSubmit}
             className="border p-4 shadow rounded bg-white"
           >
-            <h2 className="text-center mb-4">Iniciar Sesión</h2>
+            <h2 className="text-center mb-4">Login</h2>
             <div className="form-group mb-3">
               <label htmlFor="email">Correo electrónico:</label>
               <input
@@ -132,8 +94,8 @@ export const IniciarSesion = () => {
                 disabled={loading}
               />
               <div className="mt-2">
-                <Link to="/olvido-su-contraseña">
-                  ¿Olvidaste tu contraseña?
+                <Link to="/forgot-password">
+                  ¿Forgot password?
                 </Link>
               </div>
             </div>
@@ -152,11 +114,11 @@ export const IniciarSesion = () => {
               className="btn btn-success w-100"
               disabled={loading}
             >
-              {loading ? "Iniciando sesión..." : "Iniciar sesión"}
+              {loading ? "Logging in..." : "Login"}
             </button>
             <div className="text-center mt-3">
               <small>
-                ¿No tienes cuenta? <Link to="/registro">Crea una</Link>
+                ¿Don't have an account? <Link to="/signup">Sign Up</Link>
               </small>
             </div>
           </form>

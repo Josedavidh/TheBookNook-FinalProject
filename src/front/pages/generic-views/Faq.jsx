@@ -1,9 +1,9 @@
 import {Link, useNavigate} from "react-router-dom"
-export const PreguntasFrecuentes = () => {
+export const Faq = () => {
   return (
     <div className="container py-1">
       <div className="col-12 text-center py-3 my-3 bg-dark text-white">
-        <h2>Preguntas Frecuentes</h2>
+        <h2>Frequently Asked Questions</h2>
       </div>
       <ul className="ps-3 list-unstyled">
         <li className="mb-4">

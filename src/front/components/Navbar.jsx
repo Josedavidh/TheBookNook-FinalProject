@@ -51,7 +51,7 @@ export const Navbar = ({ onSearch, searchValue }) => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 order-lg-1">
             <li>
-              <Link className="ms-4 navbar-link" to="/categorias">
+              <Link className="ms-4 navbar-link" to="/categories">
                 Categories
               </Link>
             </li>
@@ -111,13 +111,13 @@ export const Navbar = ({ onSearch, searchValue }) => {
             {!store.token ? (
               <>
                 <li>
-                  <Link className="dropdown-item" to="/iniciar-sesion">
-                    Iniciar sesión
+                  <Link className="dropdown-item" to="/login">
+                    Login
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/registro">
-                    Registrarse
+                  <Link className="dropdown-item" to="/signup">
+                    Sign Up
                   </Link>
                 </li>
               </>

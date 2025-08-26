@@ -40,7 +40,7 @@ export const Cart = () => {
 
     if (!store.token) {
       alert("Para pagar necesitas iniciar sesión.");
-      navigate("/iniciar-sesion");
+      navigate("/login");
       return;
     }
 

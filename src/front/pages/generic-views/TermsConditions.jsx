@@ -1,8 +1,8 @@
-export const TerminosCondiciones = () => {
+export const TermsConditions = () => {
   return (
     <div className="container py-4">
       <div className="col-12 text-center py-3 my-3 bg-dark text-white">
-        <h2>Terminos y condiciones</h2>
+        <h2>Terms and Conditions</h2>
       </div>
       <ul className="ps-3 list-unstyled">
         <li className="mb-4">

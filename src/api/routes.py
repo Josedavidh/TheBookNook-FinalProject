@@ -19,7 +19,7 @@ stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 api = Blueprint('api', __name__)
 
 # LOGIN ENDPOINT
-@api.route('/register', methods=['POST'])
+@api.route('/signup', methods=['POST'])
 def add_user():
     data = request.get_json()
     email = data.get("email")
@@ -228,7 +228,7 @@ def get_products():
     return jsonify([product.serialize() for product in products_list]), 200                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 
 
-@api.route('/product/<int:id>', methods=['GET'])
+@api.route('/product-detail/<int:id>', methods=['GET'])
 def get_product(id):
     product = Product.query.get(id)
     if not product:
@@ -440,10 +440,10 @@ def handleContactForm():
         db.session.add(new_message)
         db.session.commit()
 
-        print(f"Nuevo mensaje de contacto guardado en DB (PostgreSQL):")
-        print(f"  Nombre: {new_message.name}")
+        print(f"New contact message saved in DB (PostgreSQL):")
+        print(f"  Name: {new_message.name}")
         print(f"  Email: {new_message.email}")
-        print(f"  Mensaje: {new_message.message}")
+        print(f"  Message: {new_message.message}")
         print("-" * 30)
 
         success_response = {

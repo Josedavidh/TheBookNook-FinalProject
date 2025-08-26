@@ -109,7 +109,7 @@ def validate_email(user_email, user_id):
             expires_delta=timedelta(hours=1)
         )
 
-        reset_url = f'{os.getenv("FRONTEND_URL")}/recuperar-contraseña?token={token}'
+        reset_url = f'{os.getenv("FRONTEND_URL")}/password-recovery?token={token}'
         message = f"""
             <div>
                 <h1>Verifica tu correo</h1>
