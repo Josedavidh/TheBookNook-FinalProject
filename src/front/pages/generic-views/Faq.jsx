@@ -7,29 +7,26 @@ export const Faq = () => {
       </div>
       <ul className="ps-3 list-unstyled">
         <li className="mb-4">
-          <h4 className="mb-2">¿Cuánto tarda en llegar mi pedido?</h4>
+          <h4 className="mb-2">How long does it take for my order to arrive?</h4>
           <p>
-            Los tiempos de entrega varían según tu ubicación. En promedio, los
-            pedidos se entregan entre 3 y 7 días hábiles después de la
-            confirmación del pago. Recibirás un correo con el número de
-            seguimiento cuando tu pedido sea enviado.
+            Delivery times vary depending on your location. On average, orders are delivered within 3 to 7 business days 
+            after payment is confirmed. You will receive an email with the tracking number once your order has been shipped.
           </p>
         </li>
 
         <li className="mb-4">
-          <h4 className="mb-2">¿Puedo cambiar o devolver un producto?</h4>
+          <h4 className="mb-2">Can I exchange or return a product?</h4>
           <p>
-            Sí, aceptamos cambios y devoluciones dentro de los primeros 15 días
-            desde la recepción del pedido, siempre que el producto esté en
-            perfectas condiciones y sin uso. Consulta nuestra {" "}
+            Yes, we accept exchanges and returns within the first 15 days after receiving your order, as long as the product is in 
+            perfect condition and unused. Please refer to our {" "}
             <Link
-              to="/politica-de-cancelacion"
+              to="/cancellation-policy"
               className="text-decoration-underline text-primary"
             >
-              Política de Cancelacion
+              Cancellation Policy
             </Link>
             {" "}
-            para más detalles.
+            for more details.
           </p>
         </li>
 

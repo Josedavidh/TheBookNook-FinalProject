@@ -37,8 +37,8 @@ return () => {
         className="product-card__image"
       />
 
-            <h3 ref={titleRef} className=''>{product.name}</h3>
-            <p className='fw-bold fs-4'>${product.price.toFixed(2)}</p>
+            <h3 ref={titleRef}>{product.name}</h3>
+            <p className='fw-bold fs-5'>${product.price.toFixed(2)}</p>
             <Link to={`/product-detail/${product.id}`}>
             <button className='btn btn-warning rounded-5 fs-6 fw-bold'    
             >More Details

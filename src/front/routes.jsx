@@ -13,7 +13,7 @@ import { Demo } from "./pages/generic-views/Demo.jsx";
 
 // Generic Views
 import { WhoWeAre } from "./pages/generic-views/WhoWeAre.jsx";
-import { Contact } from "./pages/generic-views/Contact.jsx";
+import { ContactUs } from "./pages/generic-views/ContactUs.jsx";
 import { Faq } from "./pages/generic-views/Faq.jsx";
 import { PrivacyPolicy } from "./pages/generic-views/PrivacyPolicy.jsx";
 import { TermsConditions } from "./pages/generic-views/TermsConditions.jsx";
@@ -62,7 +62,7 @@ export const router = createBrowserRouter(
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/purchase-confirmation" element={<PurchaseConfirmation />} />
       <Route path="/cancellation-policy" element={<CancellationPolicy />} />
-      <Route path="/contact-us" element={<Contact />} />
+      <Route path="/contact-us" element={<ContactUs />} />
       <Route path="/terms-conditions" element={<TermsConditions />} />
       <Route path="/categories" element={<Categories />} />
          <Route path="/books" element={<AllBooks />} />

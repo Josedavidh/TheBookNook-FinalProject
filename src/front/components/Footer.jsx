@@ -38,7 +38,7 @@ export const Footer = () => (
             </Link>
           </li>
           <li className="nav-item mb-2">
-            <Link to="/contactanos" className="nav-link p-0 text-light">
+            <Link to="/contact-us" className="nav-link p-0 text-light">
               Contact Us
             </Link>
           </li>
